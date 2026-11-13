@@ -39,6 +39,10 @@ const groups: { heading: string; items: Section[] }[] = [
       { to: '/dashboard/socials', label: 'Contact: social links', end: false },
     ],
   },
+  {
+    heading: 'Account',
+    items: [{ to: '/dashboard/password', label: 'Change password', end: false }],
+  },
 ];
 
 const allSections = groups.flatMap((group) => group.items);

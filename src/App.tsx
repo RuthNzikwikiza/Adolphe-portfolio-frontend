@@ -22,10 +22,13 @@ import {
 } from './pages/dashboard/sections';
 import Gallery from './pages/Gallery';
 import Home from './pages/Home';
+import ChangePassword from './pages/dashboard/ChangePassword';
+import ForgotPassword from './pages/ForgotPassword';
 import Login from './pages/Login';
 import NotFound from './pages/NotFound';
 import Press from './pages/Press';
 import Register from './pages/Register';
+import ResetPassword from './pages/ResetPassword';
 import Work from './pages/Work';
 
 export default function App() {
@@ -41,6 +44,8 @@ export default function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/forgot-password" element={<ForgotPassword />} />
+        <Route path="/reset-password" element={<ResetPassword />} />
         <Route element={<RequireAuth ownerOnly />}>
           <Route path="/dashboard" element={<DashboardLayout />}>
             <Route index element={<Dashboard />} />
@@ -55,6 +60,7 @@ export default function App() {
             <Route path="facts" element={<FactsManager />} />
             <Route path="education" element={<EducationManager />} />
             <Route path="socials" element={<SocialsManager />} />
+            <Route path="password" element={<ChangePassword />} />
           </Route>
         </Route>
         <Route path="*" element={<NotFound />} />

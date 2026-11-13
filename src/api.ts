@@ -270,3 +270,24 @@ export function manageUpdate<T>(resource: string, body: FormData): Promise<T> {
 export async function manageReorder(resource: string, ids: number[]): Promise<void> {
   await request<unknown>(`/manage/${resource}/reorder/`, { method: 'POST', body: JSON.stringify({ ids }) }, true);
 }
+
+export async function changePassword(oldPassword: string, newPassword: string): Promise<void> {
+  await request<unknown>('/auth/password/change/', {
+    method: 'POST',
+    body: JSON.stringify({ old_password: oldPassword, new_password: newPassword }),
+  }, true);
+}
+
+export async function forgotPassword(email: string): Promise<void> {
+  await request<unknown>('/auth/password/forgot/', {
+    method: 'POST',
+    body: JSON.stringify({ email }),
+  });
+}
+
+export async function resetPassword(uid: string, token: string, newPassword: string): Promise<void> {
+  await request<unknown>('/auth/password/reset/', {
+    method: 'POST',
+    body: JSON.stringify({ uid, token, new_password: newPassword }),
+  });
+}
