@@ -13,6 +13,7 @@ const links = [
   { to: '/accolades', label: 'Accolades' },
   { to: '/press', label: 'Press' },
   { to: '/gallery', label: 'Gallery' },
+  { to: '/videos', label: 'Videos' },
   { to: '/contact', label: 'Contact' },
 ];
 

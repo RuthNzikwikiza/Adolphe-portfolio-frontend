@@ -305,3 +305,9 @@ export async function resendVerification(email: string): Promise<void> {
     body: JSON.stringify({ email }),
   });
 }
+
+export type Video = { id: number; title: string; video_id: string; description: string };
+
+export function getVideos(): Promise<Video[]> {
+  return request<Video[]>('/content/videos/');
+}

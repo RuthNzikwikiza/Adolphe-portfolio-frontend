@@ -29,6 +29,7 @@ const groups: { heading: string; items: Section[] }[] = [
       { to: '/dashboard/accolades', label: 'Accolades', end: false },
       { to: '/dashboard/press', label: 'Press', end: false },
       { to: '/dashboard/gallery', label: 'Gallery', end: false },
+      { to: '/dashboard/videos', label: 'Videos', end: false },
     ],
   },
   {

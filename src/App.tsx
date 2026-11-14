@@ -32,6 +32,8 @@ import ResendVerification from './pages/ResendVerification';
 import ResetPassword from './pages/ResetPassword';
 import VerifyEmail from './pages/VerifyEmail';
 import Work from './pages/Work';
+import Videos from './pages/Videos';
+import VideosManager from './pages/dashboard/VideosManager';
 
 export default function App() {
   return (
@@ -43,6 +45,7 @@ export default function App() {
         <Route path="/accolades" element={<Accolades />} />
         <Route path="/press" element={<Press />} />
         <Route path="/gallery" element={<Gallery />} />
+        <Route path="/videos" element={<Videos />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
@@ -61,6 +64,7 @@ export default function App() {
             <Route path="accolades" element={<AccoladesManager />} />
             <Route path="press" element={<PressManager />} />
             <Route path="gallery" element={<GalleryManager />} />
+            <Route path="videos" element={<VideosManager />} />
             <Route path="facts" element={<FactsManager />} />
             <Route path="education" element={<EducationManager />} />
             <Route path="socials" element={<SocialsManager />} />
