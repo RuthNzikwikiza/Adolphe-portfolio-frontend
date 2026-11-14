@@ -47,7 +47,6 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     name: string,
   ): Promise<void> {
     await apiRegister(username, email, password, name);
-    await login(username, password);
   }
 
   function logout(): void {

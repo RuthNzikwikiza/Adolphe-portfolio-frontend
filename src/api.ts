@@ -291,3 +291,17 @@ export async function resetPassword(uid: string, token: string, newPassword: str
     body: JSON.stringify({ uid, token, new_password: newPassword }),
   });
 }
+
+export async function verifyEmail(token: string): Promise<void> {
+  await request<unknown>('/auth/verify-email/', {
+    method: 'POST',
+    body: JSON.stringify({ token }),
+  });
+}
+
+export async function resendVerification(email: string): Promise<void> {
+  await request<unknown>('/auth/resend-verification/', {
+    method: 'POST',
+    body: JSON.stringify({ email }),
+  });
+}

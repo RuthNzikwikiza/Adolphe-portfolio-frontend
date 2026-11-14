@@ -85,6 +85,8 @@ export default function Login() {
 
       <p className="auth-switch">
         <Link to="/forgot-password">Forgot password?</Link>
+        {' · '}
+        <Link to="/resend-verification">Resend verification email</Link>
       </p>
 
       <p className="auth-switch">

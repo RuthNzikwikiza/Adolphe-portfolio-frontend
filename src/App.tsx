@@ -28,7 +28,9 @@ import Login from './pages/Login';
 import NotFound from './pages/NotFound';
 import Press from './pages/Press';
 import Register from './pages/Register';
+import ResendVerification from './pages/ResendVerification';
 import ResetPassword from './pages/ResetPassword';
+import VerifyEmail from './pages/VerifyEmail';
 import Work from './pages/Work';
 
 export default function App() {
@@ -46,6 +48,8 @@ export default function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/reset-password" element={<ResetPassword />} />
+        <Route path="/verify-email" element={<VerifyEmail />} />
+        <Route path="/resend-verification" element={<ResendVerification />} />
         <Route element={<RequireAuth ownerOnly />}>
           <Route path="/dashboard" element={<DashboardLayout />}>
             <Route index element={<Dashboard />} />

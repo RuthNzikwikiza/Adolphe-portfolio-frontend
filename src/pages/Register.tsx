@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import type { FormEvent } from 'react';
-import { Link, Navigate, useNavigate } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 
 import { useAuth } from '../auth/AuthContext';
 import AuthShell from '../components/AuthShell';
@@ -8,7 +8,6 @@ import PasswordField from '../components/PasswordField';
 
 export default function Register() {
   const { user, register } = useAuth();
-  const navigate = useNavigate();
 
   const [name, setName] = useState('');
   const [username, setUsername] = useState('');
@@ -17,6 +16,7 @@ export default function Register() {
   const [confirm, setConfirm] = useState('');
   const [error, setError] = useState('');
   const [busy, setBusy] = useState(false);
+  const [sent, setSent] = useState(false);
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -52,7 +52,7 @@ export default function Register() {
     setError('');
     try {
       await register(username.trim(), email.trim(), password, cleanName);
-      navigate('/');
+      setSent(true);
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Something went wrong. Try again.');
     } finally {
@@ -61,6 +61,19 @@ export default function Register() {
   }
 
   if (user) return <Navigate to="/" replace />;
+
+  if (sent) {
+    return (
+      <AuthShell title="Check your email" subtitle="We sent you a link to confirm your address.">
+        <p className="auth-note">
+          Open the email and click the link, then log in. If you do not see it, check your spam folder.
+        </p>
+        <p className="auth-switch">
+          <Link to="/login">Go to log in</Link>
+        </p>
+      </AuthShell>
+    );
+  }
 
   return (
     <AuthShell title="Create your account" subtitle="It takes less than a minute.">
