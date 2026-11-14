@@ -14,6 +14,7 @@ const links = [
   { to: '/press', label: 'Press' },
   { to: '/gallery', label: 'Gallery' },
   { to: '/videos', label: 'Videos' },
+  { to: '/articles', label: 'Articles' },
   { to: '/contact', label: 'Contact' },
 ];
 

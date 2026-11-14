@@ -12,6 +12,7 @@ const groups: { heading: string; items: Section[] }[] = [
     items: [
       { to: '/dashboard', label: 'Visitors', end: true },
       { to: '/dashboard/messages', label: 'Messages', end: false },
+      { to: '/dashboard/comments', label: 'Comments', end: false },
     ],
   },
   {
@@ -30,6 +31,7 @@ const groups: { heading: string; items: Section[] }[] = [
       { to: '/dashboard/press', label: 'Press', end: false },
       { to: '/dashboard/gallery', label: 'Gallery', end: false },
       { to: '/dashboard/videos', label: 'Videos', end: false },
+      { to: '/dashboard/articles', label: 'Articles', end: false },
     ],
   },
   {

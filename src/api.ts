@@ -311,3 +311,35 @@ export type Video = { id: number; title: string; video_id: string; description: 
 export function getVideos(): Promise<Video[]> {
   return request<Video[]>('/content/videos/');
 }
+
+export type ArticleSummary = {
+  id: number;
+  title: string;
+  date: string;
+  excerpt: string;
+  image: string | null;
+  image_alt: string;
+};
+
+export type ArticleDetailData = ArticleSummary & { body: string | null; locked: boolean };
+
+export type ArticleComment = { id: number; author: string; text: string; created_at: string };
+
+export function getArticles(): Promise<ArticleSummary[]> {
+  return request<ArticleSummary[]>('/content/articles/');
+}
+
+export function getArticle(id: number): Promise<ArticleDetailData> {
+  return request<ArticleDetailData>(`/content/articles/${id}/`, {}, true);
+}
+
+export function getComments(id: number): Promise<ArticleComment[]> {
+  return request<ArticleComment[]>(`/content/articles/${id}/comments/`, {}, true);
+}
+
+export async function postComment(id: number, text: string): Promise<void> {
+  await request<unknown>(`/content/articles/${id}/comments/`, {
+    method: 'POST',
+    body: JSON.stringify({ text }),
+  }, true);
+}

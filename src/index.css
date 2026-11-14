@@ -508,3 +508,84 @@ body:has(dialog[open]) { overflow: hidden; }
   font-size: 1.1rem;
   margin: 0.75rem 0 0.25rem;
 }
+
+.articles-list {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0 0;
+  display: grid;
+  gap: 2rem;
+}
+
+.articles-list li {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: minmax(0, 220px) 1fr;
+  align-items: start;
+}
+
+.articles-list li.no-image {
+  grid-template-columns: 1fr;
+}
+
+.articles-list img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.articles-list h2 {
+  margin: 0 0 0.25rem;
+}
+
+@media (max-width: 640px) {
+  .articles-list li {
+    grid-template-columns: 1fr;
+  }
+}
+
+.article-date {
+  opacity: 0.7;
+  margin: 0 0 0.75rem;
+}
+
+.article-image {
+  max-width: 100%;
+  border-radius: 10px;
+  margin: 0 0 1.5rem;
+}
+
+.article-body p {
+  max-width: 70ch;
+}
+
+.article-locked {
+  margin-top: 1.5rem;
+  padding: 1.25rem;
+  border: 1px solid currentColor;
+  border-radius: 10px;
+}
+
+.comments {
+  margin-top: 3rem;
+}
+
+.comment-list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 2rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.comment-meta {
+  opacity: 0.7;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.comment-text {
+  white-space: pre-wrap;
+  margin: 0.25rem 0 0;
+}

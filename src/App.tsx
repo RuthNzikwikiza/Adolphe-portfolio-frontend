@@ -34,6 +34,10 @@ import VerifyEmail from './pages/VerifyEmail';
 import Work from './pages/Work';
 import Videos from './pages/Videos';
 import VideosManager from './pages/dashboard/VideosManager';
+import ArticleDetail from './pages/ArticleDetail';
+import Articles from './pages/Articles';
+import ArticlesManager from './pages/dashboard/ArticlesManager';
+import CommentsManager from './pages/dashboard/CommentsManager';
 
 export default function App() {
   return (
@@ -46,6 +50,8 @@ export default function App() {
         <Route path="/press" element={<Press />} />
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/videos" element={<Videos />} />
+        <Route path="/articles" element={<Articles />} />
+        <Route path="/articles/:id" element={<ArticleDetail />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
@@ -65,6 +71,8 @@ export default function App() {
             <Route path="press" element={<PressManager />} />
             <Route path="gallery" element={<GalleryManager />} />
             <Route path="videos" element={<VideosManager />} />
+            <Route path="articles" element={<ArticlesManager />} />
+            <Route path="comments" element={<CommentsManager />} />
             <Route path="facts" element={<FactsManager />} />
             <Route path="education" element={<EducationManager />} />
             <Route path="socials" element={<SocialsManager />} />
